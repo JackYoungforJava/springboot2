@@ -1,8 +1,6 @@
 package com.atguigu.boot.controller;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class HelloController {
@@ -30,5 +28,10 @@ public class HelloController {
     @RequestMapping(value = "/user",method = RequestMethod.DELETE)
     public String deleteUser(){
         return "DELETE-张三";
+    }
+
+    @GetMapping(value = "/get/user")
+    public String getUser(@RequestParam("username") String username){
+        return username;
     }
 }
